@@ -19,10 +19,11 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('todo', require('./components/Todo'))
-Vue.component('new-todo', require('./components/NewTodo.vue'))
-Vue.component('todo-list', require('./components/TodoList'))
-Vue.component('todo-app', require('./components/TodoApp'))
+Vue.component('block', require('./components/Block'))
+Vue.component('block-list', require('./components/BlockList'))
+Vue.component('player', require('./components/Player'))
+Vue.component('leaderboard', require('./components/Leaderboard'))
+Vue.component('block-app', require('./components/BlockApp'))
 
 import store from '../js/store'
 
@@ -33,6 +34,6 @@ import store from '../js/store'
  */
 
 const app = new Vue({
-    el: '#app',
+    el: '#game-area',
     store
 });

@@ -1,16 +1,19 @@
 let mutations = {
-    ADD_TODO(state, todo) {
-        state.todos.unshift(todo)
+    ADD_BLOCK(state, block) {
+        state.blocks.unshift(block)
     },
-    CACHE_REMOVED(state, todo) {
-      state.toRemove = todo;
+    CACHE_REMOVED(state, block) {
+        state.toRemove = block
     },
-    GET_TODOS(state, todos) {
-        state.todos = todos
+    GET_BLOCKS(state, blocks) {
+        state.blocks = blocks
     },
-    DELETE_TODO(state, todo) {
-        state.todos.splice(state.todos.indexOf(todo), 1)
+    DELETE_BLOCK(state, block) {
+        state.blocks.splice(state.blocks.indexOf(block), 1)
         state.toRemove = null;
+    },
+    GET_LEADERBOARD(state, leaderboard) {
+        state.leaderboard = leaderboard
     }
 }
 

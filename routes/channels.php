@@ -11,10 +11,14 @@
 |
 */
 
-Broadcast::channel('newTask', function () {
+Broadcast::channel('newBlock', function () {
     return true;
 });
 
-Broadcast::channel('taskRemoved', function () {
+Broadcast::channel('blockClicked', function () {
+    return true;
+});
+
+Broadcast::channel('leaderboardRefreshed', function () {
     return true;
 });

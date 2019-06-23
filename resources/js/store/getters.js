@@ -1,12 +1,15 @@
 let getters = {
-    newTodo: state => {
-        return state.newTodo
-    },
-    todos: state => {
-        return state.todos
+    blocks: state => {
+        return state.blocks
     },
     toRemove: state => {
         return state.toRemove
+    },
+    newBlock: state => {
+        return state.newBlock
+    },
+    leaderboard: state => {
+        return state.leaderboard
     }
 }
 

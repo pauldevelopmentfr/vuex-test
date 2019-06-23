@@ -1,10 +1,10 @@
 let state = {
-    todos: [],
+    blocks: [],
     toRemove: null,
-    newTodo: {
-        title: '',
-        completed: false
-    }
+    newBlock: {
+        title: ''
+    },
+    leaderboard: []
 }
 
 export default state

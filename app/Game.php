@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Game extends Model
 {
     protected $fillable = [
-        'title',
-        'completed'
+        'user',
+        'points'
     ];
 }

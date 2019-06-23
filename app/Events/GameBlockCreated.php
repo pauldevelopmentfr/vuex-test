@@ -11,22 +11,22 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class TaskRemoved implements ShouldBroadcastNow
+class GameBlockCreated implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $task;
-
+    public $block;
+    
     /**
      * Create a new event instance.
      *
-     * @param $task
+     * @param $block
      *
      * @return void
      */
-    public function __construct($task)
+    public function __construct($block)
     {
-        $this->task = $task;
+        $this->block = $block;
     }
 
     /**
@@ -36,11 +36,11 @@ class TaskRemoved implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new Channel('taskRemoved');
+        return new Channel('newBlock');
     }
 
     public function broadcastAs()
     {
-        return 'task-removed';
+        return 'block-created';
     }
 }

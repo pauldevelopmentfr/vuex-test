@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('todos', 'TaskController@fetchAll');
-Route::post('todos', 'TaskController@store');
-Route::delete('todos/{id}', 'TaskController@delete');
+Route::get('leaderboard', 'GameController@fetchLeaderboard');
+Route::get('blocks', 'GameBlocksController@fetchBlocks');
+Route::post('blocks', 'GameBlocksController@createBlock');
+Route::delete('blocks/{id}', 'GameBlocksController@removeBlocks');

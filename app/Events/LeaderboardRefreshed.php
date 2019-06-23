@@ -11,22 +11,22 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class TaskCreated implements ShouldBroadcastNow
+class LeaderboardRefreshed implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $task;
+    public $leaderboard;
     
     /**
      * Create a new event instance.
      *
-     * @param $task
+     * @param $leaderboard
      *
      * @return void
      */
-    public function __construct($task)
+    public function __construct($leaderboard)
     {
-        $this->task = $task;
+        $this->leaderboard = $leaderboard;
     }
 
     /**
@@ -36,11 +36,11 @@ class TaskCreated implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new Channel('newTask');
+        return new Channel('leaderboardRefreshed');
     }
 
     public function broadcastAs()
     {
-        return 'task-created';
+        return 'leaderboard-refreshed';
     }
 }
